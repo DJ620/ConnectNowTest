@@ -2,7 +2,7 @@ import axios from "axios";
 
 export type GameData = {
     id: Number;
-    first_release_date: Number;
+    first_release_date: Date;
     name: String;
     rating: Number;
     summary: String;

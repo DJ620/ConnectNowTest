@@ -9,13 +9,21 @@ function VideoGames() {
         getGameData().then(games => setAllGames(games));
     }, []);
 
-    useEffect(() => {
-        console.log(allGames);
-    }, [allGames]);
+    if (allGames.length < 1) {
+        return <p>Loading games...</p>
+    };
 
     return (
         <div>
-            
+            {allGames.map(game => (
+                <GameInfo
+                    id={game.id}
+                    first_release_date={game.first_release_date}
+                    name={game.name}
+                    rating={game.rating}
+                    summary={game.summary}
+                />
+            ))}
         </div>
     )
 }
