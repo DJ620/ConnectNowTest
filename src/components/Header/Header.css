@@ -1,0 +1,32 @@
+.label {
+    position: relative;
+}
+
+.label:hover {
+    cursor: pointer;
+    color: #d7d6d6;
+}
+
+.video {
+    width: 209px;
+}
+
+.contact {
+    width: 150px;
+}
+
+.echo {
+    position: absolute;
+    color: #182c47;
+    font-size: 50px;
+    z-index: -1;
+    bottom: 0;
+}
+
+.videoEcho {
+    right: 75px;
+}
+
+.contactEcho {
+    right: -62px;
+}

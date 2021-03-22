@@ -1,0 +1,17 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    background: linear-gradient(#081221, #03080f);
+    font-family: 'Mulish', sans-serif;
+    color: #c1d1e8;
+}
+
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.white {
+    color: #ffffff;
+}
