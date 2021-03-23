@@ -13,7 +13,7 @@ function App() {
     }
   }
   return (
-    <div style={styles.page}>
+    <div className="page">
       <Router>
         <Header />
         <Switch>
