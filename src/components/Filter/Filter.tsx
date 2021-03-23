@@ -14,7 +14,7 @@ const Filter: React.FC<Props> = ({
   setFilteredGames,
 }) => {
   const [nameSearch, setNameSearch] = useState("");
-  const [minScore, setMinScore] = useState(1);
+  const [minScore, setMinScore] = useState(0);
   const [sortBy, setSortBy] = useState("Release Date");
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Filter: React.FC<Props> = ({
     if (nameSearch) {
       search = search.filter((game: GameData) => game.name.includes(nameSearch));
     };
-    if (minScore > 1) {
+    if (minScore > 0) {
         search = search.filter((game: GameData) => game.rating >= minScore * 10);
     }
     switch (sortBy) {
@@ -63,6 +63,12 @@ const Filter: React.FC<Props> = ({
       );
   };
 
+  const handleClear = () => {
+      setNameSearch("");
+      setMinScore(0);
+      setSortBy("Release Date");
+  }
+
   return (
     <div className="px-3 background">
       <h6 className="white pt-4 pb-4">Filter Results</h6>
@@ -71,6 +77,7 @@ const Filter: React.FC<Props> = ({
         type="text"
         placeholder="Text string"
         className="mb-4 input"
+        value={nameSearch}
         onChange={(e) => setNameSearch(e.target.value)}
       />
       <p className="white">Minimum Score</p>
@@ -80,6 +87,7 @@ const Filter: React.FC<Props> = ({
         min="1"
         max="10"
         className="mb-4 input"
+        value={minScore > 0 ? minScore : "1 - 10"}
         onChange={e => setMinScore(+e.target.value)}
       />
       <p className="white">Order By</p>
@@ -90,7 +98,7 @@ const Filter: React.FC<Props> = ({
           </button>
         </div>
         <div className="col-10 d-flex justify-content-end">
-          <select className="select pt-1" onChange={e => setSortBy(e.target.value)}>
+          <select className="select pt-1" value={sortBy} onChange={e => setSortBy(e.target.value)}>
             <option value="Release Date" className="option">
               Release Date
             </option>
@@ -104,7 +112,7 @@ const Filter: React.FC<Props> = ({
         </div>
       </div>
       <div className="row d-flex justify-content-end">
-        <button className="mr-3 mt-2 mb-4 clear">Clear</button>
+        <button className="mr-3 mt-2 mb-4 clear" onClick={handleClear}>Clear</button>
       </div>
     </div>
   );
