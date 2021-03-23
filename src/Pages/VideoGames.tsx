@@ -17,9 +17,9 @@ function VideoGames() {
     getGameData().then((games) => setAllGames(games));
   }, []);
 
-  if (allGames.length < 1) {
-    return <p>Loading games...</p>;
-  }
+//   if (allGames.length < 1) {
+//     return <p>Loading games...</p>;
+//   }
 
   return (
     <div className="row mx-5">
@@ -27,7 +27,7 @@ function VideoGames() {
         <Filter />
       </div>
       <div className="col-9">
-        {allGames.map((game) => (
+        { allGames.length > 0 ? allGames.map((game) => (
           <GameInfo
             id={game.id}
             first_release_date={game.first_release_date}
@@ -35,7 +35,7 @@ function VideoGames() {
             rating={game.rating}
             summary={game.summary}
           />
-        ))}
+        )) : <p>Loading...</p>}
       </div>
     </div>
   );

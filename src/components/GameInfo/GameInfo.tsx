@@ -17,17 +17,13 @@ const GameInfo: React.FC<GameData> = ({
       let shortened = summary.split(" ");
       shortened.splice(55);
       setSummaryPreview(shortened.join(" ") + "...");
-    }
-  }, []);
-
-  useEffect(() => {
+    };
     const date = new Date(first_release_date);
     const day = date.getDate();
     const month = date.getMonth() + 1;
     const year = date.getFullYear();
     setFormattedDate(`${day}/${month}/${year}`);
-    // const newRating = rating
-  }, []);
+  });
 
   return (
     <div className="row align-items-center mb-2 mx-5 panel">
