@@ -3,7 +3,8 @@
     position: relative;
     font-size: 13px;
     height: 150px;
-    /* width: 75vw; */
+    max-width: 96vw; 
+    margin: 0 auto;
 }
 
 .rating {
@@ -19,8 +20,4 @@
     height: 150px;
     max-width: 130px;
     margin-bottom: 42px;
-}
-
-.summary {
-    /* width: 55vw; */
 }

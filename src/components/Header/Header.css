@@ -31,3 +31,9 @@
 .contactEcho {
     right: -62px;
 }
+
+@media only screen and (max-width: 991px) {
+    .contact {
+        margin-left: 0;
+    }
+}

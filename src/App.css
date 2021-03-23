@@ -25,5 +25,6 @@ body {
 @media only screen and (max-width: 991px) {
     .page {
         width: 96vw;
+        border: 1px solid green;
     }
 }

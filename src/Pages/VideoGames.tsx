@@ -32,14 +32,8 @@ function VideoGames() {
     });
   }, []);
 
-  const styles = {
-    page: {
-      margin: "0 auto",
-    }
-  }
-
   return (
-    <div className="row" style={styles.page}>
+    <div className="row" >
       <div className="col-12 col-lg-2 mb-5">
         <Filter allGames={allGames} filteredGames={filteredGames} setFilteredGames={setFilteredGames}/>
       </div>
