@@ -2,10 +2,11 @@ import axios from "axios";
 
 export type GameData = {
     id: Number;
-    first_release_date: Date;
-    name: String;
+    first_release_date: number;
+    name: string;
     rating: Number;
     summary: String;
+    formattedDate?: Date;
 };
 
 export const getGameData = async () => {

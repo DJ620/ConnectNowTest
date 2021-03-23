@@ -1,3 +1,10 @@
+.background {
+    background-color: #0e1a2b;
+    font-size: 13px;
+    width: 24vw;
+    position: relative;
+}
+
 .input {
     width: 100%;
     background-color: #182c47;
@@ -18,8 +25,22 @@
     color: #B6CAE3;
 }
 
+.selectrow {
+    width: 26vw;
+}
+
+.arrow {
+    height: 30px;
+    width: 30px;
+    color: #ffffff;
+    background-color: #5692e8;
+    border: none;
+    margin-top: -10px;
+}
+
 .select {
-    width: 245px;
+    width: 100%;
+    /* width: 245px; */
     background-color: #182c47;
     border: none;
     height: 30px;
