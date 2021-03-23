@@ -15,6 +15,7 @@ const Filter: React.FC<Props> = ({
 }) => {
   const [nameSearch, setNameSearch] = useState("");
   const [minScore, setMinScore] = useState(1);
+  const [sortBy, setSortBy] = useState("Release Date");
 
   useEffect(() => {
       let search = [...allGames];
@@ -24,13 +25,42 @@ const Filter: React.FC<Props> = ({
     if (minScore > 1) {
         search = search.filter((game: GameData) => game.rating >= minScore * 10);
     }
-    setFilteredGames(search);
-  }, [nameSearch, minScore]);
+    switch (sortBy) {
+        case "Score":
+            setFilteredGames(sortByScore(search));
+            break;
+        case "Name":
+            setFilteredGames(sortByName(search));
+            break;
+        default:
+            setFilteredGames(sortByDate(search));
+    };
+  }, [nameSearch, minScore, sortBy]);
 
   const sortByDate = (games: GameData[]) => {
     return games.sort(
       (a: GameData, b: GameData) => a.first_release_date - b.first_release_date
     );
+  };
+
+  const sortByScore = (games: GameData[]) => {
+      return games.sort(
+          (a: GameData, b: GameData) => a.rating - b.rating
+      );
+  };
+
+  const sortByName = (games: GameData[]) => {
+      return games.sort(
+          (a: GameData, b: GameData) => {
+            if (a.name < b.name) {
+                return -1;
+            } else if (a.name > b.name) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+      );
   };
 
   return (
@@ -60,7 +90,7 @@ const Filter: React.FC<Props> = ({
           </button>
         </div>
         <div className="col-10 d-flex justify-content-end">
-          <select className="select pt-1">
+          <select className="select pt-1" onChange={e => setSortBy(e.target.value)}>
             <option value="Release Date" className="option">
               Release Date
             </option>

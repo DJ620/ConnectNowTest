@@ -4,7 +4,7 @@ export type GameData = {
     id: Number;
     first_release_date: number;
     name: string;
-    rating: Number;
+    rating: number;
     summary: String;
     formattedDate?: Date;
 };
