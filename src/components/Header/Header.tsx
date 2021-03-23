@@ -20,12 +20,12 @@ function Header() {
     };
 
   return (
-    <div className="container mb-5">
+    <div className="ml-3 mb-5">
     <div className="row mt-5 ml-2 ml-lg-0 montserrat white">
       <div className="col-12 col-lg-4 mb-3 mt-lg-5">
         <h3 className="label video" onClick={handleVideo}>VIDEO GAMES{video ? <span className="echo videoEcho">VIDEO</span> : null}</h3>
       </div>
-      <div className="col-12 col-lg-4 mt-lg-5">
+      <div className="col-12 col-lg-4 mt-lg-5 contactcol">
         <h3 className="label contact" onClick={handleContact}>CONTACT{contact ? <span className="echo contactEcho">CONTACT</span> : null}</h3>
       </div>
     </div>

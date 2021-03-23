@@ -97,7 +97,7 @@ const Filter: React.FC<Props> = ({
             <span className="fas fa-arrow-up" />
           </button>
         </div>
-        <div className="col-10 d-flex justify-content-end">
+        <div className="col-10">
           <select className="select pt-1" value={sortBy} onChange={e => setSortBy(e.target.value)}>
             <option value="Release Date" className="option">
               Release Date

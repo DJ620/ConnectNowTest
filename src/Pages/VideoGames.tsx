@@ -32,12 +32,18 @@ function VideoGames() {
     });
   }, []);
 
+  const styles = {
+    page: {
+      margin: "0 auto",
+    }
+  }
+
   return (
-    <div className="row mx-5">
-      <div className="col-3">
+    <div className="row" style={styles.page}>
+      <div className="col-12 col-lg-2 mb-5">
         <Filter allGames={allGames} filteredGames={filteredGames} setFilteredGames={setFilteredGames}/>
       </div>
-      <div className="col-9">
+      <div className="col-12 col-lg-10">
         {isLoading ? <p className="ml-5">Loading...</p> : filteredGames.length > 0 ? filteredGames.map((game) => (
           <GameInfo
             id={game.id}
