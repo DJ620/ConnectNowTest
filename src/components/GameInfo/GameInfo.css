@@ -1,41 +1,67 @@
 .panel {
-    background-color: #0e1a2b;
-    position: relative;
-    font-size: 13px;
-    height: 150px;
-    max-width: 96vw; 
-    margin: 0 auto;
+  background-color: #0e1a2b;
+  position: relative;
+  font-size: 13px;
+  height: 150px;
+  max-width: 96vw;
+  margin: 0 auto;
 }
 
 .rating {
+  background-color: #5692e8;
+  border-radius: 20px;
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+}
+
+.black {
+  background-color: black;
+  height: 150px;
+  max-width: 130px;
+  margin-bottom: 42px;
+}
+
+.smallPanel {
+  display: none;
+}
+
+@media only screen and (max-width: 751px) {
+  .black {
+    margin-bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 715px) {
+  .rating {
+    margin-left: -15px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .panel {
+    display: none;
+  }
+  .smallPanel {
+    display: block;
+    font-size: 13px;
+  }
+
+  .smallBlack {
+    height: 150px;
+    width: 100%;
+    background-color: black;
+    position: relative;
+  }
+
+  .smallRating {
+    position: absolute;
+    right: 5%;
+    top: 15%;
     background-color: #5692e8;
     border-radius: 20px;
     font-size: 20px;
     width: 35px;
     height: 35px;
-}
-
-.black {
-    background-color: black;
-    height: 150px;
-    max-width: 130px;
-    margin-bottom: 42px;
-}
-
-@media only screen and (max-width: 751px) {
-    .black {
-        margin-bottom: 50px;
-    }
-}
-
-@media only screen and (max-width: 715px) {
-    .rating {
-        margin-left: -15px;
-    }
-}
-
-@media only screen and (max-width: 599px) {
-    .black {
-        /* margin-bottom: 100px; */
-    }
+  }
 }
