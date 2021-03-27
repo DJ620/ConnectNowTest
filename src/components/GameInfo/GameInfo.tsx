@@ -33,7 +33,7 @@ const GameInfo: React.FC<GameData> = ({
         <p className="mt-n1">Release Date: {formattedDate}</p>
         <p>[Summary] {summaryPreview}</p>
       </div>
-      <div className="col-1 mt-n4 pl-xl-5">
+      <div className="col-1 mt-n4 pl-4 pl-lg-0 pl-xl-5">
         <p className="text-center pt-1 rating">{rating.toString()[0]}</p>
       </div>
     </div>
