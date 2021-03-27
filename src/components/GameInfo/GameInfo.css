@@ -21,3 +21,21 @@
     max-width: 130px;
     margin-bottom: 42px;
 }
+
+@media only screen and (max-width: 751px) {
+    .black {
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 715px) {
+    .rating {
+        margin-left: -15px;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .black {
+        /* margin-bottom: 100px; */
+    }
+}
