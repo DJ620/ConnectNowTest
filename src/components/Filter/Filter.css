@@ -94,7 +94,7 @@
 
 @media only screen and (max-width: 991px) {
   .background {
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     width: 96vw;
     max-width: 96vw;
     margin: 0 auto;
@@ -121,6 +121,24 @@
 }
 
 @media only screen and (max-width: 661px) {
+  .select {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .select {
+    width: 121%;
+    margin-left: -3%;
+  }
+  .clear {
+    width: 100%;
+    margin-left: 2%;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
   .select {
     margin-left: 0;
   }
