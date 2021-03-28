@@ -29,12 +29,19 @@ const GameInfo: React.FC<GameData> = ({
 
   useEffect(() => {
     if (width < 755) {
-      if (summary.split(" ").length > 30) {
+      if (summary.split(" ").length > 20) {
         let shortened = summary.split(" ");
         shortened.splice(20);
         setSummaryPreview(shortened.join(" ") + "...");
       }
-    } else {
+    } else if (width < 1099) {
+      if (summary.split(" ").length > 40) {
+        let shortened = summary.split(" ");
+        shortened.splice(40);
+        setSummaryPreview(shortened.join(" ") + "...");
+      }
+    } 
+    else {
       if (summary.split(" ").length > 55) {
         let shortened = summary.split(" ");
         shortened.splice(55);
