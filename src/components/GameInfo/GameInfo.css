@@ -64,4 +64,8 @@
     width: 35px;
     height: 35px;
   }
+
+  .smallinfo {
+    background-color: #0e1a2b;
+  }
 }

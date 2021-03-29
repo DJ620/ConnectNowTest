@@ -40,8 +40,7 @@ const GameInfo: React.FC<GameData> = ({
         shortened.splice(40);
         setSummaryPreview(shortened.join(" ") + "...");
       }
-    } 
-    else {
+    } else {
       if (summary.split(" ").length > 55) {
         let shortened = summary.split(" ");
         shortened.splice(55);
@@ -67,11 +66,11 @@ const GameInfo: React.FC<GameData> = ({
         <div className="smallBlack">
           <p className="text-center pt-1 smallRating">{rating.toString()[0]}</p>
         </div>
-        <div className="px-3 pt-2">
-        <h5 className="white">{name}</h5>
+        <div className="px-3 py-2 smallinfo align-items-center">
+          <h5 className="white">{name}</h5>
           <p className="mt-n1">Release Date: {formattedDate}</p>
           <p>[Summary] {summaryPreview}</p>
-          </div>
+        </div>
       </div>
     </div>
   );
