@@ -13,12 +13,14 @@ const GameInfo: React.FC<GameData> = ({
   const [formattedDate, setFormattedDate] = useState("");
   const [summaryPreview, setSummaryPreview] = useState(summary);
 
+  // Eventlistener used to check size of viewport and slice off the appropriate length of the summary
   useEffect(() => {
     window.addEventListener("resize", () => {
       setWidth(window.innerWidth);
     });
   }, [window.innerWidth]);
 
+  // Function to correctly format the release date of the game
   useEffect(() => {
     const date = new Date(first_release_date);
     const day = date.getDate();
@@ -27,6 +29,7 @@ const GameInfo: React.FC<GameData> = ({
     setFormattedDate(`${day}/${month}/${year}`);
   }, []);
 
+  // Function that shortens the displayed summary based on the width of the viewport
   useEffect(() => {
     if (width < 755) {
       if (summary.split(" ").length > 20) {
@@ -62,6 +65,7 @@ const GameInfo: React.FC<GameData> = ({
           <p className="text-center pt-1 rating">{rating.toString()[0]}</p>
         </div>
       </div>
+      {/* This section of code is for mobile-sized screens */}
       <div className="smallPanel">
         <div className="smallBlack">
           <p className="text-center pt-1 smallRating">{rating.toString()[0]}</p>

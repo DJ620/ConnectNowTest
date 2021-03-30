@@ -21,6 +21,7 @@ const Filter: React.FC<Props> = ({
   const [showOptions, setShowOptions] = useState(false);
   const [up, setUp] = useState(true);
 
+  // Function that handles filtering through the games
   useEffect(() => {
     let search = [...allGames];
     if (nameSearch) {
@@ -43,16 +44,19 @@ const Filter: React.FC<Props> = ({
     }
   }, [nameSearch, minScore, sortBy, up]);
 
+  // Function that handles ordering the games by release date
   const sortByDate = (games: GameData[]) => {
     return games.sort(
       (a: GameData, b: GameData) => up ? a.first_release_date - b.first_release_date : b.first_release_date - a.first_release_date
     );
   };
 
+  //Function that handles ordering the games by score
   const sortByScore = (games: GameData[]) => {
     return games.sort((a: GameData, b: GameData) => up ? a.rating - b.rating : b.rating - a.rating);
   };
 
+  // Function that handles ordering the game by name
   const sortByName = (games: GameData[]) => {
     return games.sort((a: GameData, b: GameData) => {
       if (up ? a.name < b.name : b.name < a.name) {
@@ -65,6 +69,7 @@ const Filter: React.FC<Props> = ({
     });
   };
 
+  // Function that determines how the games should be sorted/ordered
   const handleSort = (sort: string) => {
     if (option1 === sort) {
       setOption1(sortBy);
@@ -75,6 +80,7 @@ const Filter: React.FC<Props> = ({
     setShowOptions(false);
   };
 
+  // Function that restores and resets the list of games to their initial order
   const handleClear = () => {
     setNameSearch("");
     setMinScore(0);

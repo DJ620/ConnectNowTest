@@ -8,6 +8,7 @@ function VideoGames() {
   const [allGames, setAllGames] = useState<GameData[]>([]);
   const [filteredGames, setFilteredGames] = useState<GameData[]>([]);
 
+  // Queries the video game API and then sorts the games first alphabetically and then by release date
   useEffect(() => {
     getGameData().then((games) => {
       setIsLoading(false);
@@ -40,6 +41,7 @@ function VideoGames() {
         />
       </div>
       <div className="col-12 col-lg-10">
+        {/* Until all game data has arrived from the API call, the user will simply see the word "loading..." */}
         {isLoading ? (
           <p className="ml-5">Loading...</p>
         ) : filteredGames.length > 0 ? (
@@ -54,6 +56,7 @@ function VideoGames() {
             />
           ))
         ) : (
+          // If the filter results come up empty, this message will be displayed to the user
           <p className="ml-5">No results matching your search</p>
         )}
       </div>
