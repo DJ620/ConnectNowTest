@@ -39,40 +39,46 @@
   color: #ffffff;
   background-color: #5692e8;
   border: none;
-  bottom: 0px;
-  /* top: 10px; */
+  bottom: 16px;
+  top: -5px;
   position: absolute;
+  z-index: 5;
+}
+
+.arrow:focus {
+  outline: none;
 }
 
 .select {
   width: 123%;
+  color: #b6cae3;
+  position: relative;
+  z-index: 5;
+}
+
+.selected {
   background-color: #182c47;
   border: none;
   height: 30px;
   margin-top: -5px;
   /* margin-right: 57px; */
   color: #b6cae3;
-  display: flex;
-  flex-direction: column;
   position: relative;
+  cursor: pointer;
 }
 
-/* .option {
-  padding: 0 30px 0 10px;
-  min-height: 30px;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 0;
+.options {
   width: 100%;
-  pointer-events: none;
-  order: 2;
-  z-index: 1;
-  box-sizing: border-box;
-  overflow: hidden;
-  white-space: nowrap;
-  transition: background 0.4s ease-in-out;
-} */
+  background-color: #182c47;
+  color: #b6cae3;
+  margin-top: -16px;
+  z-index: 5;
+}
+
+.option {
+  cursor: pointer;
+  width: 100%;
+}
 
 .clear {
   color: #ffffff;
@@ -94,7 +100,6 @@
 
 @media only screen and (max-width: 991px) {
   .background {
-    /* border: 1px solid pink; */
     width: 96vw;
     max-width: 96vw;
     margin: 0 auto;
@@ -107,6 +112,13 @@
   .select {
       width: 117%;
       margin-left: -4%;
+  }
+
+  .options {
+    position: absolute;
+    /* width: 110.25%; */
+    /* margin-left: -4%; */
+    opacity: .95;
   }
 
   .clear {
@@ -131,10 +143,17 @@
     width: 121%;
     margin-left: -3%;
   }
+
+  .options {
+    width: 90%;
+    margin-left: 10%;
+  }
+
   .clear {
-    width: 100%;
+    width: 95%;
     margin-left: 2%;
     margin-bottom: 20px;
+    margin-top: 5px;
   }
 }
 
