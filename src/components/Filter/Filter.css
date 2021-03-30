@@ -61,7 +61,6 @@
   border: none;
   height: 30px;
   margin-top: -5px;
-  /* margin-right: 57px; */
   color: #b6cae3;
   position: relative;
   cursor: pointer;
@@ -86,6 +85,11 @@
   border: none;
   height: 25px;
   width: 65px;
+  z-index: 4;
+}
+
+.clear:focus {
+  outline: none;
 }
 
 @media only screen and (max-width: 1155px) {
@@ -116,8 +120,6 @@
 
   .options {
     position: absolute;
-    /* width: 110.25%; */
-    /* margin-left: -4%; */
     opacity: .95;
   }
 

@@ -6,9 +6,9 @@ function Contact() {
       width: "37%",
       minWidth: "300px",
       margin: "0 auto",
+      fontSize: "13px"
     },
     label: {
-      fontSize: "13px",
       marginBottom: "5px",
     },
     input: {
@@ -26,13 +26,12 @@ function Contact() {
       border: "none",
       height: "30px",
       width: "65px",
-      fontSize: "13px"
     }
   };
   return (
     <div style={styles.contact}>
       <h4 className="montserrat">GET IN TOUCH</h4>
-      <p style={{ fontSize: "13px" }} className="mb-5">
+      <p className="mb-5">
         Trysail transom furl Sea legs scallywag Jack Ketch chandler mizzenmost
         reef sails skysail. Shiver me timbers loot bucko belaying pin Sea Legs
         boom gunwalls booty jury mast fore.

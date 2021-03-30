@@ -6,12 +6,6 @@ import Contact from "./Pages/Contact";
 import VideoGames from "./Pages/VideoGames";
 
 function App() {
-  const styles = {
-    page: {
-      width: "90vw",
-      margin: "0 auto",
-    }
-  }
   return (
     <div className="page">
       <Router>

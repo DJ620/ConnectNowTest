@@ -78,7 +78,16 @@ const Filter: React.FC<Props> = ({
   const handleClear = () => {
     setNameSearch("");
     setMinScore(0);
-    setSortBy("Release Date");
+    setUp(true);
+    if (sortBy !== "Release Date") {
+      if (option1 === "Release Date") {
+        setOption1(sortBy);
+      } else {
+        setOption2(sortBy);
+      };
+      setSortBy("Release Date");
+    };
+    setShowOptions(false);
   };
 
   return (
